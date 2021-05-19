@@ -1,0 +1,9 @@
+* {
+    margin: auto;
+    font-weight: bold;
+}
+.container form {
+    display: flex;
+    flex-direction:column;
+    
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <form action="/results" method ="POST">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input name="name" type="text">
+            <!-- request.POST['name'] -->
+            <label for="location">Dojo Location</label>
+            <select name="location" id="location">Choose a location
+                <option value="Chicago">Chicago</option>
+                <option value="LA">LA</option>
+                <option value="Washington">San Jose</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Bellevue">Bellevue</option>
+                <option value="Boise">Boise</option>
+                <option value="Online">Online</option>
+            </select>
+            <!-- request.POST['location'] -->
+            <label for="language">Favorite Language</label>
+            <select name="language" id="language">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="React">React</option>
+            </select>
+            <!-- request.POST['language'] -->
+            <label for="comment">Comment (optional):</label>
+            <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
+            <!-- request.POST['comment'] -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
